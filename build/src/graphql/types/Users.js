@@ -47,7 +47,7 @@ var UserType = exports.UserType = new graphql.GraphQLObjectType({
 });
 
 var UserInputType = exports.UserInputType = new graphql.GraphQLInputObjectType({
-    name: 'Add Users',
+    name: 'AddUsers',
     description: 'Types of add Users',
 
     fields: function fields() {
