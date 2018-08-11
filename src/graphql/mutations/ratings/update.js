@@ -16,7 +16,7 @@ export default {
     },
     resolve(root,params){
         return Rating.findByIdAndUpdate(params.id,{$set:{...params.data}})
-                        .then((rating)=> Rating.findById(genre.id).exec())
+                        .then((rating)=> Rating.findById(rating.id).exec())
                         .catch((err)=> new Error('Couldnt update Rating data'))
     }
 }

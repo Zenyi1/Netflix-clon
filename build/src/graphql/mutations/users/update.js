@@ -29,7 +29,7 @@ exports.default = {
         },
         data: {
             name: 'data',
-            type: new graphql.GraphQLNonNull(GenreInputType)
+            type: new graphql.GraphQLNonNull(_Users.UserInputType)
         }
     },
     resolve: function resolve(root, params) {

@@ -14,7 +14,7 @@ export default {
     resolve(root,params){
         const movie = new Movies(params.data)
         const newMovie = movie.save();
-        if(!newMovie) throw new Error("Error at creating genre")
+        if(!newMovie) throw new Error("Error at creating movie")
         return newMovie
     }
 }

@@ -1,9 +1,9 @@
-import Movie from '../../../Schemas/movies';
-import {MovieType} from '../../types/Movies';
+import Rating from '../../../Schemas/rating';
+import {RatingType} from '../../types/Ratings';
 import * as graphql from 'graphql';
 
 export default {
-    type: MovieType,
+    type: RatingType,
     args:{
         id:{
             name: 'ID',
@@ -11,8 +11,8 @@ export default {
         }
     },
     resolve(root,params){
-        const deleteMovie = Movie.findByIdAndRemove(params.id).exec()
-        if(!deleteMovie) throw Error("Error on delete")
-        return deleteMovie
+        const deleteRating = Rating.findByIdAndRemove(params.id).exec()
+        if(!deleteRating) throw Error("Error on delete")
+        return deleteRating
     }
 }

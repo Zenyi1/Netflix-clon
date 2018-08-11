@@ -30,7 +30,7 @@ exports.default = {
     resolve: function resolve(root, params) {
         var movie = new _movies2.default(params.data);
         var newMovie = movie.save();
-        if (!newMovie) throw new Error("Error at creating genre");
+        if (!newMovie) throw new Error("Error at creating movie");
         return newMovie;
     }
 };

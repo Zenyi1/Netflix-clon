@@ -34,7 +34,7 @@ exports.default = {
     },
     resolve: function resolve(root, params) {
         return _rating2.default.findByIdAndUpdate(params.id, { $set: _extends({}, params.data) }).then(function (rating) {
-            return _rating2.default.findById(genre.id).exec();
+            return _rating2.default.findById(rating.id).exec();
         }).catch(function (err) {
             return new Error('Couldnt update Rating data');
         });
