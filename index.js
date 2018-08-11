@@ -23,7 +23,7 @@ const JsonParser = bodyParser.json();
 const app = express();
 //inicialize el framework de express
 
-const port = process.env.Port || 3000;
+const PORT = process.env.PORT || 3000;
 //inicialize el puerto
 
 mongoose.connect('mongodb://zenyiOP:a12345@ds111492.mlab.com:11492/movies');
@@ -33,7 +33,7 @@ db.on('error',() => console.log("Failed to connect"))
 //conecte mLab como mi hosting
 
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log('Server works on port 3000')
 })
 //para verificar que esta funcionando

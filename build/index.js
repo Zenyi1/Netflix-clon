@@ -46,7 +46,7 @@ var JsonParser = _bodyParser2.default.json();
 var app = (0, _express2.default)();
 //inicialize el framework de express
 
-var port = process.env.Port || 3000;
+var PORT = process.env.PORT || 3000;
 //inicialize el puerto
 
 _mongoose2.default.connect('mongodb://zenyiOP:a12345@ds111492.mlab.com:11492/movies');
@@ -59,7 +59,7 @@ db.on('error', function () {
 //conecte mLab como mi hosting
 
 
-app.listen(port, function () {
+app.listen(PORT, function () {
     console.log('Server works on port 3000');
 });
 //para verificar que esta funcionando
