@@ -10,10 +10,18 @@ var _genres = require('./genres');
 
 var _genres2 = _interopRequireDefault(_genres);
 
+var _movies = require('./movies');
+
+var _movies2 = _interopRequireDefault(_movies);
+
+var _users = require('./users');
+
+var _users2 = _interopRequireDefault(_users);
+
+var _ratings = require('./ratings');
+
+var _ratings2 = _interopRequireDefault(_ratings);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//import movies from './movies';
-//import users from './users';
-//import ratings from './ratings';
-
-exports.default = _extends({}, _genres2.default);
+exports.default = _extends({}, _genres2.default, _movies2.default, _users2.default, _ratings2.default);
