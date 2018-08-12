@@ -8,12 +8,14 @@ var _mongoose = require('mongoose');
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var Schema = _mongoose2.default.Schema;
 
-var RatingSchema = new Schema({
-    'tittle': {
+var GenreSchema = new Schema({
+    'name': {
         type: String,
         require: true
     },
@@ -21,7 +23,6 @@ var RatingSchema = new Schema({
         type: String,
         require: true
     }
+}, { 'collection': 'genres', timestamps: true });
 
-}, { 'collection': 'ratings', timestamps: true });
-
-exports.default = _mongoose2.default.model('ratings', RatingSchema);
+exports.default = _mongoose2.default.model('genres', GenreSchema);

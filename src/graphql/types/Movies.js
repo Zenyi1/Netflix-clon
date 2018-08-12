@@ -7,8 +7,8 @@ import {GenreType} from './Genres'
 import Genre from '../../Schemas/genres.'
 
 export const MovieType = new graphql.GraphQLObjectType({
-    name: "Movies",
-    description: "Types of Movies",
+     name: 'Movies',
+     description: 'Types of Movies',
     fields: () => ({
         _id:{
             type: graphql.GraphQLNonNull(graphql.GraphQLID)
@@ -25,11 +25,11 @@ export const MovieType = new graphql.GraphQLObjectType({
         director: {
             type: graphql.GraphQLString
         },
-        year: {
+         year : {
             type: graphql.GraphQLInt
         },
-        rank: {
-            type: graphql.GraphQLInt
+        classification: {
+            type: graphql.GraphQLString
         },
         duration: {
             type: graphql.GraphQLString
@@ -47,13 +47,24 @@ export const MovieType = new graphql.GraphQLObjectType({
                 const {genre} = movie
                 return Genre.findById(genre).exec()
             }
+         },
+         language: {
+             type: graphql.GraphQLString
+         },
+         premium: {
+             type: graphql.GraphQLBoolean
+         },
+         url : {
+             type: graphql.GraphQLString
         }
+
+
+     })
     })
-});
 
 export const MovieInputType = new graphql.GraphQLInputObjectType({
-    name:"AddMovies",
-    description: "Types of Movies",
+     name: 'AddMovies',
+     description: 'Types of Movies',
     fields: () => ({
     image: {
         type: graphql.GraphQLString
@@ -67,11 +78,11 @@ export const MovieInputType = new graphql.GraphQLInputObjectType({
     director: {
         type: graphql.GraphQLString
     },
-    year: {
+        year : {
         type: graphql.GraphQLInt
     },
-    rank: {
-        type: graphql.GraphQLInt
+    classification: {
+        type: graphql.GraphQLString
     },
     duration: {
         type: graphql.GraphQLString
@@ -81,6 +92,15 @@ export const MovieInputType = new graphql.GraphQLInputObjectType({
     },
     genre: {
         type: graphql.GraphQLString
+        },
+        language: {
+            type: graphql.GraphQLString
+        },
+        premium: {
+            type: graphql.GraphQLBoolean
+        },
+        url : {
+            type: graphql.GraphQLString
     }
     })
 });

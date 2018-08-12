@@ -8,20 +8,17 @@ var _mongoose = require('mongoose');
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var Schema = _mongoose2.default.Schema;
 
 var RatingSchema = new Schema({
-    'tittle': {
-        type: String,
-        require: true
-    },
-    'description': {
+    'rating': {
         type: String,
         require: true
     }
-
 }, { 'collection': 'ratings', timestamps: true });
 
 exports.default = _mongoose2.default.model('ratings', RatingSchema);

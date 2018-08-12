@@ -8,60 +8,47 @@ var _mongoose = require('mongoose');
 
 var _mongoose2 = _interopRequireDefault(_mongoose);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var Schema = _mongoose2.default.Schema;
 
 var MovieSchema = new Schema({
-
-    'image': {
-        type: String,
-        require: true
-    },
     'name': {
         type: String,
         require: true
     },
-    'synopsis': {
+    'genre': {
+        type: Schema.Types.ObjectId,
+        ref: 'genres',
+        require: true
+    },
+    'synopsys': {
         type: String,
         require: true
     },
-    'director': {
+    'cast': {
         type: String,
-        require: true
+        require: false
     },
     'year': {
         type: Number,
         require: true
     },
-    'classification': {
+    'rank': {
         type: String,
         require: true
     },
-    'duration': {
-        type: String,
+    'length': {
+        type: Number,
         require: true
     },
     'rating': {
         type: Schema.Types.ObjectId,
-        ref: 'rating'
-    },
-    'genre': {
-        type: Schema.Types.ObjectId,
-        ref: 'genre'
-    },
-    'language': {
-        type: String,
-        require: true
-    },
-    'premium': {
-        type: Boolean,
-        require: true
-    },
-    'url': {
-        type: String,
-        require: true
+        require: true,
+        ref: 'ratings'
     }
-}, { 'collection': 'movies', timestamps: true });
+});
 
 exports.default = _mongoose2.default.model('movies', MovieSchema);

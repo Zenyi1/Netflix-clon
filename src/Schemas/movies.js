@@ -2,42 +2,57 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const MovieSchema = new Schema ({
-    'name':{
-        type: String,
-        require: true
-    }, 
-    'genre': {
-        type: Schema.Types.ObjectId, 
-        ref: 'genres',
-        require: true,
-    },
-    'synopsys': {
+var MovieSchema = new Schema({
+
+    'image': {
         type: String,
         require: true
     },
-    'cast': {
-        type:String,
-        require:false
+    'name': {
+        type: String,
+        require: true
     },
-    'year' : {
-        type:Number,
-        require:true
+    'synopsis': {
+        type: String,
+        require: true
     },
-    'rank': {
-        type:String,
-        require:true
+    'director': {
+        type: String,
+        require: true
     },
-    'length': {
+    'year': {
         type: Number,
         require: true
     },
-    'rating' : {
+    'classification': {
+        type: String,
+        require: true
+    },
+    'duration': {
+        type: String,
+        require: true
+    },
+    'rating': {
         type: Schema.Types.ObjectId,
-        require: true,
-        ref:'ratings'
+        ref: 'rating'
+    },
+    'genre': {
+        type: Schema.Types.ObjectId,
+        ref: 'genre'
+    },
+    'language': {
+        type: String,
+        require: true
+    },
+    'premium': {
+        type: Boolean,
+        require: true
+    },
+    'url': {
+        type: String,
+        require: true
     }
-})
+}, { 'collection': 'movies', timestamps: true });
 
 
 export default mongoose.model('movies',MovieSchema);

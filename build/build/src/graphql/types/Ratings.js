@@ -9,7 +9,17 @@ var _graphql = require("graphql");
 
 var graphql = _interopRequireWildcard(_graphql);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+        return obj;
+    } else {
+        var newObj = {};if (obj != null) {
+            for (var key in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+            }
+        }newObj.default = obj;return newObj;
+    }
+}
 
 var RatingType = exports.RatingType = new graphql.GraphQLObjectType({
     name: "Ratings",
@@ -19,7 +29,7 @@ var RatingType = exports.RatingType = new graphql.GraphQLObjectType({
             _id: {
                 type: graphql.GraphQLNonNull(graphql.GraphQLID)
             },
-            tittle: {
+            name: {
                 type: graphql.GraphQLString
             },
             description: {
@@ -34,11 +44,14 @@ var RatingInputType = exports.RatingInputType = new graphql.GraphQLInputObjectTy
     description: "Insert Rating",
     fields: function fields() {
         return {
-            tittle: {
+            name: {
                 type: graphql.GraphQLString
             },
             description: {
                 type: graphql.GraphQLString
+            },
+            age: {
+                type: graphql.GraphQLInt
             }
         };
     }

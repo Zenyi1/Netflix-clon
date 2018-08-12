@@ -21,13 +21,25 @@ var _genres = require('../../Schemas/genres.');
 
 var _genres2 = _interopRequireDefault(_genres);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+        return obj;
+    } else {
+        var newObj = {};if (obj != null) {
+            for (var key in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+            }
+        }newObj.default = obj;return newObj;
+    }
+}
 
 var MovieType = exports.MovieType = new graphql.GraphQLObjectType({
-    name: 'Movies',
-    description: 'Types of Movies',
+    name: "Movies",
+    description: "Types of Movies",
     fields: function fields() {
         return {
             _id: {
@@ -48,8 +60,8 @@ var MovieType = exports.MovieType = new graphql.GraphQLObjectType({
             year: {
                 type: graphql.GraphQLInt
             },
-            classification: {
-                type: graphql.GraphQLString
+            rank: {
+                type: graphql.GraphQLInt
             },
             duration: {
                 type: graphql.GraphQLString
@@ -69,24 +81,14 @@ var MovieType = exports.MovieType = new graphql.GraphQLObjectType({
 
                     return _genres2.default.findById(genre).exec();
                 }
-            },
-            language: {
-                type: graphql.GraphQLString
-            },
-            premium: {
-                type: graphql.GraphQLBoolean
-            },
-            url: {
-                type: graphql.GraphQLString
             }
-
         };
     }
 });
 
 var MovieInputType = exports.MovieInputType = new graphql.GraphQLInputObjectType({
-    name: 'AddMovies',
-    description: 'Types of Movies',
+    name: "AddMovies",
+    description: "Types of Movies",
     fields: function fields() {
         return {
             image: {
@@ -104,8 +106,8 @@ var MovieInputType = exports.MovieInputType = new graphql.GraphQLInputObjectType
             year: {
                 type: graphql.GraphQLInt
             },
-            classification: {
-                type: graphql.GraphQLString
+            rank: {
+                type: graphql.GraphQLInt
             },
             duration: {
                 type: graphql.GraphQLString
@@ -114,15 +116,6 @@ var MovieInputType = exports.MovieInputType = new graphql.GraphQLInputObjectType
                 type: graphql.GraphQLString
             },
             genre: {
-                type: graphql.GraphQLString
-            },
-            language: {
-                type: graphql.GraphQLString
-            },
-            premium: {
-                type: graphql.GraphQLBoolean
-            },
-            url: {
                 type: graphql.GraphQLString
             }
         };
