@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.MovieInputType = exports.MovieType = undefined;
+exports.RankMovieType = exports.MovieInputType = exports.MovieType = undefined;
 
 var _graphql = require('graphql');
 
@@ -48,8 +48,8 @@ var MovieType = exports.MovieType = new graphql.GraphQLObjectType({
             year: {
                 type: graphql.GraphQLInt
             },
-            classification: {
-                type: graphql.GraphQLString
+            rank: {
+                type: graphql.GraphQLList(graphql.GraphQLFloat)
             },
             duration: {
                 type: graphql.GraphQLString
@@ -104,9 +104,6 @@ var MovieInputType = exports.MovieInputType = new graphql.GraphQLInputObjectType
             year: {
                 type: graphql.GraphQLInt
             },
-            classification: {
-                type: graphql.GraphQLString
-            },
             duration: {
                 type: graphql.GraphQLString
             },
@@ -124,6 +121,18 @@ var MovieInputType = exports.MovieInputType = new graphql.GraphQLInputObjectType
             },
             url: {
                 type: graphql.GraphQLString
+            }
+        };
+    }
+});
+
+var RankMovieType = exports.RankMovieType = new graphql.GraphQLInputObjectType({
+    name: "addRank",
+    description: "Add rank to movie",
+    fields: function fields() {
+        return {
+            rank: {
+                type: graphql.GraphQLFloat
             }
         };
     }
