@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 
 const RatingSchema = new Schema ({
-    'tittle': {
+    'name': {
         type: String,
         require: true
     },

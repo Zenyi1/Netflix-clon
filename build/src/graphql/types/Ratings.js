@@ -19,7 +19,7 @@ var RatingType = exports.RatingType = new graphql.GraphQLObjectType({
             _id: {
                 type: graphql.GraphQLNonNull(graphql.GraphQLID)
             },
-            tittle: {
+            name: {
                 type: graphql.GraphQLString
             },
             description: {
@@ -34,7 +34,7 @@ var RatingInputType = exports.RatingInputType = new graphql.GraphQLInputObjectTy
     description: "Insert Rating",
     fields: function fields() {
         return {
-            tittle: {
+            name: {
                 type: graphql.GraphQLString
             },
             description: {

@@ -7,7 +7,7 @@ export const RatingType = new graphql.GraphQLObjectType({
         _id:{
             type: graphql.GraphQLNonNull(graphql.GraphQLID)
         },
-        tittle: {
+        name: {
             type: graphql.GraphQLString
         },
         description: {
@@ -20,7 +20,7 @@ export const RatingInputType = new graphql.GraphQLInputObjectType({
     name: "RatingInput",
     description: "Insert Rating",
     fields: () => ({
-        tittle: {
+        name: {
             type: graphql.GraphQLString
         },
         description: {
